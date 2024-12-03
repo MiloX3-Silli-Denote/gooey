@@ -2,8 +2,8 @@ local Button = {};
 
 Button.__index = Button;
 
-local button_tex_up = love.graphics.newImage("textures/button.png");
-local button_tex_down = love.graphics.newImage("textures/button_down.png");
+local button_tex_up = love.graphics.newImage("gooey/textures/button.png");
+local button_tex_down = love.graphics.newImage("gooey/textures/button_down.png");
 
 local BORDER_W = 9;
 local BORDER_S = BORDER_W / 3;
