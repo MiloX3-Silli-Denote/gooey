@@ -1,0 +1,57 @@
+{
+  // this is a snippet for vscode that creates the base for a new ui element when you type 'gooeyElement' and press tab
+  // copy this code and place it into a new snippet script for lua in vscode
+  
+	"gooey element": {
+		"prefix": "gooeyElement",
+		"body": [
+			"local $1 = {};",
+			"",
+			"$1.__index = $1;",
+			"",
+			"function $1.new(container, x, y, w, h$2)",
+			"\tassert(isNum(x, y, w, h), \"bad arguments to create '$1'\");",
+			"",
+			"\tlocal instance = setmetatable({}, $1);",
+			"",
+			"\tinstance.x = x;",
+			"\tinstance.y = y;",
+			"\tinstance.w = w;",
+			"\tinstance.h = h;",
+			"",
+			"\tcontainer:addElement(instance);",
+			"\tcontainer:claimIn(instance, x, y, x + w, y + h);",
+			"",
+			"\treturn instance;",
+			"end",
+			"",
+			"function $1:gainFocus()",
+			"end",
+			"function $1:loseFocus()",
+			"end",
+			"",
+			"function $1:textInput(text)",
+			"end",
+			"function $1:keyPressed(key, isRepeat)",
+			"end",
+			"function $1:keyReleased(key)",
+			"end",
+			"",
+			"function $1:mouseMoved(x, y)",
+			"end",
+			"function $1:mousePressed(x, y, button, presses)",
+			"end",
+			"function $1:mouseReleased(x, y, button, presses)",
+			"end",
+			"function $1:wheelMoved(x, y)",
+			"end",
+			"",
+			"function $1:update(dt)",
+			"end",
+			"function $1:draw()",
+			"end",
+			"",
+			"return setmetatable({}, {__call = function(_, ...) return $1.new(...) end});"
+		]
+	}
+}
