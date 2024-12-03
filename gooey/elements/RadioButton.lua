@@ -2,7 +2,7 @@ local RadioButton = {};
 
 RadioButton.__index = RadioButton;
 
-local gradient_tex = love.graphics.newImage("textures/gradient.png");
+local gradient_tex = love.graphics.newImage("gooey/textures/gradient.png");
 
 gradient_tex:setFilter("nearest");
 
