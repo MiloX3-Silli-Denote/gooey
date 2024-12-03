@@ -2,7 +2,7 @@ local Toggle = {};
 
 Toggle.__index = Toggle;
 
-local toggle_tex = love.graphics.newImage("textures/toggle.png");
+local toggle_tex = love.graphics.newImage("gooey/textures/toggle.png");
 
 local BORDER_W = 9;
 local BORDER_S = BORDER_W / 3;
