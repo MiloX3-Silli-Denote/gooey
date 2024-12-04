@@ -16,9 +16,6 @@ function ELEMENT_NAME.new(container, x, y, w, h) -- add as many additional argum
 
   -- set key of instance of however many inputs you need
 
-	container:addElement(instance);
-	container:claimIn(instance, x, y, x + w, y + h);
-
 	return instance;
 end
 
