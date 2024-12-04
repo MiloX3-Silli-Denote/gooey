@@ -19,7 +19,7 @@ local B_quad =      love.graphics.newQuad(4,5, 2,3, 8,8);
 local L_quad =      love.graphics.newQuad(0,4, 3,2, 8,8);
 local center_quad = love.graphics.newQuad(3,3, 2,2, 8,8);
 
-function SimpleTextInput.new(container, x, y, w, h, blankText_font_callback, font_callback, callback)
+function SimpleTextInput.new(x, y, w, h, blankText_font_callback, font_callback, callback)
     assert(isNum(x, y, w, h), "bad arguments to create 'SimpleTextInput'");
 
     local blankText = nil;
@@ -61,9 +61,6 @@ function SimpleTextInput.new(container, x, y, w, h, blankText_font_callback, fon
 
     instance.blink = true;
     instance.blinkTimer = 0.5;
-
-    container:addElement(instance);
-    container:claimIn(instance, x, y, x + w, y + h);
 
     return instance;
 end
