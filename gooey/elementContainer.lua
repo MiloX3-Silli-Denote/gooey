@@ -31,6 +31,8 @@ function ElementContainer:addElement(obj)
     if self.focus then
         self.focus = self.focus + 1;
     end
+
+    return obj;
 end
 
 function ElementContainer:textinput(text)
