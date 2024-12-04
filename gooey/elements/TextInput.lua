@@ -1,4 +1,4 @@
---* yes: this is all my code (judah cline, pseudonym: milo denote)
+--* yes: this is all my code
 --* yes: I wrote all of the stupid ui cursor selection checking
 --* yes: there are probably bugs
 --* yes: I wasted too much time on this
@@ -6,13 +6,13 @@
 
 --* look at the code if you want but this is what normal frontend dev looks like from the backend (its a mess)
 --* I tried to comment it but no amount of makeup will hide a pig
---! 491 lines of code and only 490 of them are edge case checking :3 (the one that isnt is this comment X3)
+--! 488 lines of code and only 487 of them are edge case checking :3 (the one that isnt is this comment X3)
 
 local TextInput = {};
 
 TextInput.__index = TextInput;
 
-local text_tex = love.graphics.newImage("gooey/textures/text_input.png");
+local text_tex = love.graphics.newImage("textures/text_input.png");
 
 local BORDER_W = 9;
 local x2BORDER_W = BORDER_W * 2;
@@ -30,7 +30,7 @@ local B_quad =      love.graphics.newQuad(4,5, 2,3, 8,8);
 local L_quad =      love.graphics.newQuad(0,4, 3,2, 8,8);
 local center_quad = love.graphics.newQuad(3,3, 2,2, 8,8);
 
-function TextInput.new(container, x, y, w, h, blankText_font_callback, font_callback, callback)
+function TextInput.new(x, y, w, h, blankText_font_callback, font_callback, callback)
     assert(isNum(x, y, w, h), "bad arguments to create 'TextInput'");
 
     local blankText = nil;
@@ -79,9 +79,6 @@ function TextInput.new(container, x, y, w, h, blankText_font_callback, font_call
     instance.callback = callback;
 
     instance.font = font or MONOSPACE_128;
-
-    container:addElement(instance);
-    container:claimIn(instance, x, y, x + w, y + h);
 
     return instance;
 end
