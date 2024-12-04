@@ -39,12 +39,13 @@ function love.draw()
 end
 ```
 ### Basic Usage
-to create a new gui scene you call ```Gooey:newContainer(x, y, gridSize, [max_w, max_h]);``` which returns a new container.
-containers act as a grid of tiles (gridSize is the amount of pixels of width each tile has) and each tile can have one gui element assigned to it.
-whenever a tile is interacted with, like hovering over it or clicking on it, its assigned element gets the associated event called.
-non-position based events (like key presses) are only called on the 'focus' element, an element becomes the 'focus' element when a tile assigned to it is clicked on.
+to create a new gui scene you call ```Gooey:newContainer();``` which returns a new container.
+containers hold components and handles input distribution and draw ordering for its contents.
 
-To add a new element onto a gui container you must call the element as a function with the container as the first argument.
+To add a new element onto a gui container you must call :addElement() on the component to be added.
 ```lua
-local newButton = Button(container, x, y, w, h, callbackFunc);
+local newButton = container:addElement(Button(x, y, w, h, callbackFunc));
+-- or:
+local newButton = Button(x, y, w, h, callbackFunc);
+container:addElement(newButton);
 ```
