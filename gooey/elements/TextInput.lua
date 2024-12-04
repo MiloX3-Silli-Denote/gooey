@@ -12,7 +12,7 @@ local TextInput = {};
 
 TextInput.__index = TextInput;
 
-local text_tex = love.graphics.newImage("textures/text_input.png");
+local text_tex = love.graphics.newImage("gooey/textures/text_input.png");
 
 local BORDER_W = 9;
 local x2BORDER_W = BORDER_W * 2;
