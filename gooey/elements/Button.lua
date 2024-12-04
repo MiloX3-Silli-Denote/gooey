@@ -21,7 +21,7 @@ local B_quad = love.graphics.newQuad(4,5, 2,3, 8,8);
 local L_quad = love.graphics.newQuad(0,4, 3,2, 8,8);
 local center_quad = love.graphics.newQuad(3,3, 2,2, 8,8);
 
-function Button.new(container, x, y, w, h)
+function Button.new(x, y, w, h, callback)
     assert(isNum(x, y, w, h), "bad arguments to create 'Button'");
     assert(w >= BORDER_W and h >= BORDER_W, "button must be at least " .. tostring(BORDER_W * 2) .. "x" .. tostring(BORDER_W * 2) .. " pixels");
 
@@ -32,11 +32,10 @@ function Button.new(container, x, y, w, h)
     instance.w = w;
     instance.h = h;
 
+    instance.onRelease = callback;
+
     instance.hovering = false;
     instance.down = false;
-
-    container:addElement(instance);
-    container:claimIn(instance, x, y, x + w, y + h)
 
     return instance;
 end
