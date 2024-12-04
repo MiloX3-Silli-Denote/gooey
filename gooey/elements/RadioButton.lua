@@ -27,7 +27,7 @@ end
 
 local PIXEL_S = 3;
 
-function RadioButton.new(container, x, y, w, h, numOptions)
+function RadioButton.new(x, y, w, h, numOptions)
     assert(isNum(x, y, w, h), "bad arguments to create 'RadioButton'");
     numOptions = numOptions or 1;
 
@@ -41,9 +41,6 @@ function RadioButton.new(container, x, y, w, h, numOptions)
     instance.numOptions = numOptions;
     instance.curSelect = nil;
     instance.downOn = nil;
-
-    container:addElement(instance);
-    container:claimIn(instance, x, y, x + w, y + h * numOptions + (h / 2) * (numOptions - 1));
 
     return instance;
 end
